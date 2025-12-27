@@ -7,9 +7,14 @@ imports: [Home];
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Home],
-  template: '<main> <header class = "brand main"> <img class = "brand logo" src = "/assets/logo.svg" alt = "iamge" aria-hidden = "true"> <section class = "brand sec"> <app-home/> </section> </header> </main>',
+  template: '<section>\n' +
+    '      <form>\n' +
+    '        <input type="text" placeholder="Filter by city" />\n' +
+    '        <button class="primary" type="button">Search</button>\n' +
+    '      </form>\n' +
+    '    </section>',
   // templatehomeUrl: './app.html',
-  // styleUrl: './app.css'
+  styleUrl: './home/home.css'
 })
 export class App {
   title = 'homes';
