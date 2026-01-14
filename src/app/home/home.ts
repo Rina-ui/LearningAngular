@@ -1,22 +1,38 @@
 import { Component } from '@angular/core';
-import {HousingLocation} from '../housing-location/housing-location';
-importa: [HousingLocation];
-
+import { HousingLocation } from '../housing-location/housing-location';
+import {HousingLocationInfo} from '../housinglocation';
 
 @Component({
   selector: 'app-home',
-  imports: [],
-  template: '<section>\n' +
-    '      <form>\n' +
-    '        <input type="text" placeholder="Filter by city" />\n' +
-    '        <button class="primary" type="button">Search</button>\n' +
-    '      </form>\n' +
-    '    </section>\n' +
-    '    <section class="results">\n' +
-    '      <app-housing-location />\n' +
-    '    </section>',
+  standalone: true,
+  imports: [HousingLocation],
+  template: `
+    <section>
+      <form>
+        <input type="text" placeholder="Filter by city" />
+        <button class="primary" type="button">Search</button>
+      </form>
+    </section>
+
+    <section class="results">
+      <app-housing-location />
+    </section>
+  `,
   styleUrl: './home.css',
 })
 export class Home {
+
+  readonly  baseUrl = 'https://angular.dev/assets/images/tutorials/common';
+
+  housingLocation: HousingLocationInfo = {
+    id: 9999,
+    name: 'test home',
+    city: 'test city',
+    state: 'ST',
+    photo: `${this.baseUrl}/example-house.jpg`,
+    availableUnit: 99,
+    wifi: true,
+    laundry: false,
+  }
 
 }
