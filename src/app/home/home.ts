@@ -15,7 +15,7 @@ import {HousingLocationInfo} from '../housinglocation';
     </section>
 
     <section class="results">
-      <app-housing-location />
+      <app-housing-location [housingLocation]="housingLocation" ] />
     </section>
   `,
   styleUrl: './home.css',
