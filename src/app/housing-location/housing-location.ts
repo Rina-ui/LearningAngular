@@ -13,6 +13,7 @@ import {HousingLocationInfo} from '../housinglocation';
     '      />\n' +
     '      <h2 class="listing-heading">{{ housingLocation().name }}</h2>\n' +
     '      <p class="listing-location">{{ housingLocation().city }}, {{ housingLocation().state }}</p>\n' +
+    '      <a [routerLink]="[\'/details\', housingLocation().id]">Learn More</a>' +
     '    </section>',
   styleUrl: './housing-location.css',
 })
