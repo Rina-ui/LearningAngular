@@ -1,18 +1,22 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import {Home} from './home/home';
 imports: [Home];
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home],
-  template: '<section>\n' +
-    '      <form>\n' +
-    '        <input type="text" placeholder="Filter by city" />\n' +
-    '        <button class="primary" type="button">Search</button>\n' +
-    '      </form>\n' +
-    '    </section>',
+  imports: [RouterOutlet, RouterLink, Home],
+  template: '<main>\n' +
+    '      <a [routerLink]="[\'/\']">\n' +
+    '        <header class="brand-name">\n' +
+    '          <img class="brand-logo" src="/public/logo.svg" alt="logo" aria-hidden="true" />\n' +
+    '        </header>\n' +
+    '      </a>\n' +
+    '      <section class="content">\n' +
+    '        <router-outlet />\n' +
+    '      </section>\n' +
+    '    </main>',
   // templatehomeUrl: './app.html',
   styleUrl: './home/home.css'
 })
